@@ -1,0 +1,15 @@
+pkgbase = randhost
+	pkgdesc = Set a random hostname.
+	pkgver = 0.1
+	pkgrel = 2
+	install = randhost.install
+	arch = any
+	license = GPL
+	depends = openrc
+	depends = coreutils
+	source = randhost
+	source = randhost-openrc
+	sha256sums = 537cc5d2e5e54c300d0b6c74353193b915b2f4a4812660aecda21fa4ebffcec6
+	sha256sums = 3ec11c0f7ce34c29a60e743e032bf44102228a1defce0d01786a9867e405a8e0
+
+pkgname = randhost

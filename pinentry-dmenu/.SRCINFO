@@ -1,0 +1,17 @@
+pkgbase = pinentry-dmenu
+	pkgdesc = pinentry program based on dmenu
+	pkgver = r57.460fde7
+	pkgrel = 1
+	url = https://github.com/ratakor/pinentry-dmenu
+	arch = x86_64
+	license = GPL
+	depends = libx11
+	depends = libxft
+	depends = libxinerama
+	depends = freetype2
+	provides = pinentry-dmenu
+	conflicts = pinentry-dmenu
+	source = git+https://github.com/ratakor/pinentry-dmenu
+	sha256sums = SKIP
+
+pkgname = pinentry-dmenu

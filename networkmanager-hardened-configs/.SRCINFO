@@ -1,0 +1,11 @@
+pkgbase = networkmanager-hardened-configs
+	pkgdesc = Enables MAC randomization on all interfaces.
+	pkgver = 0.1
+	pkgrel = 3
+	arch = any
+	license = GPL2
+	depends = networkmanager
+	source = 30-macrandomize.conf
+	sha256sums = 1a2990b8cb416570992a1b36e412c1146c6a205f54786f32bb8085a797e71fc2
+
+pkgname = networkmanager-hardened-configs

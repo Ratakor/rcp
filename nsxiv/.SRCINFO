@@ -1,0 +1,24 @@
+pkgbase = nsxiv
+	pkgdesc = Neo (or New or Not) Simple (or Small or Suckless) X Image Viewer
+	pkgver = 33
+	pkgrel = 1
+	url = https://nsxiv.codeberg.page/
+	arch = x86_64
+	license = GPL2
+	depends = imlib2
+	depends = libx11
+	depends = libxft
+	depends = fontconfig
+	depends = freetype2
+	depends = giflib
+	depends = libexif
+	depends = libwebp
+	depends = hicolor-icon-theme
+	source = nsxiv-33.tar.gz::https://codeberg.org/nsxiv/nsxiv/archive/v33.tar.gz
+	source = _nsxiv
+	source = image-mode-cycle-v30.diff
+	sha256sums = 7562af026024c28a93f5ca0cefd170c6b139cf2974165bcd695932d2cd9345c5
+	sha256sums = 97f1bea59589f0fc45934d757ab162f63d91042a79ae8f37130e488693c44d9e
+	sha256sums = a6734baffe9eaf5cc4be51d64a88d6e4336751f1723a1a04635e22a02c313d79
+
+pkgname = nsxiv

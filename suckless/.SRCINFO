@@ -1,0 +1,26 @@
+pkgbase = suckless
+	pkgdesc = Ratakor's build of dmenu, dwm, st, and slock + sb
+	pkgver = r4.771c89c
+	pkgrel = 1
+	url = https://github.com/ratakor/suckless
+	arch = x86_64
+	license = MIT
+	license = ISC
+	depends = libx11
+	depends = libxft
+	depends = libxinerama
+	depends = freetype2
+	provides = dmenu
+	provides = dwm
+	provides = st
+	provides = slock
+	provides = sb
+	conflicts = dmenu
+	conflicts = dwm
+	conflicts = st
+	conflicts = slock
+	conflicts = sb
+	source = git+https://github.com/ratakor/suckless
+	sha256sums = SKIP
+
+pkgname = suckless
