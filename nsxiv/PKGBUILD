@@ -1,0 +1,38 @@
+# Maintainer: Ratakor <ratakor@disroot.org>
+# Contributor: Christian Heusel <christian@heusel.eu>
+# Contributor: Sanjay Pavan <withercubes@protonmail.com>
+
+pkgname=nsxiv
+pkgver=33
+pkgrel=1
+pkgdesc='Neo (or New or Not) Simple (or Small or Suckless) X Image Viewer'
+arch=('x86_64')
+license=('GPL2')
+url='https://nsxiv.codeberg.page/'
+depends=('imlib2' 'libx11'                 # core dependencies
+         'libxft' 'fontconfig' 'freetype2' # status bar
+         'giflib'                          # display gif images
+         'libexif'                         # display exif images
+         'libwebp'                         # display webp images
+         'hicolor-icon-theme')             # make icon
+source=("$pkgname-$pkgver.tar.gz"::"https://codeberg.org/nsxiv/nsxiv/archive/v$pkgver.tar.gz"
+        "_nsxiv"
+        "image-mode-cycle-v30.diff")
+sha256sums=('7562af026024c28a93f5ca0cefd170c6b139cf2974165bcd695932d2cd9345c5'
+            '97f1bea59589f0fc45934d757ab162f63d91042a79ae8f37130e488693c44d9e'
+            'a6734baffe9eaf5cc4be51d64a88d6e4336751f1723a1a04635e22a02c313d79')
+
+prepare() {
+	cd "$pkgname"
+	sed -i -e 's/^CC.*/CC = cc/' -e 's/^CFLAGS.*/CFLAGS += -std=c99 -Wall -pedantic/' config.mk
+	patch -i ../image-mode-cycle-v30.diff
+}
+
+package() {
+	install -Dm644 "_$pkgname" "$pkgdir/usr/share/zsh/site-functions/_$pkgname"
+	cd "$srcdir/$pkgname"
+	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+	install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+	make DESTDIR="$pkgdir" PREFIX="/usr" install-all
+}
+
