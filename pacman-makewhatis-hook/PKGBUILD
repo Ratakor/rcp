@@ -1,0 +1,15 @@
+# Maintainer: Ratakor <ratakor@disroot.org>
+
+pkgname=pacman-makewhatis-hook
+pkgver=1.0.0
+pkgrel=1
+pkgdesc='Pacman hook to update mandoc.db with makewhatis'
+arch=('any')
+license=('GPL')
+depends=('mandoc')
+source=('makewhatis.hook')
+sha256sums=('842b2bfa30c0edf86b643d720e8753c227581ffc5c296344e88fd32a054fc3d1')
+
+package() {
+  install -Dm644 makewhatis.hook "$pkgdir/usr/share/libalpm/hooks/makewhatis.hook"
+}
